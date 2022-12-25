@@ -1,10 +1,10 @@
 import React from 'react'
 import {MdSearch} from 'react-icons/md'
-const Search = (props) => {
+const Search = ({searchNotes}) => {
   return (
     <div className='search'>
       <MdSearch className = "search-icons" size="1.3em"/>
-      <input type ="text" placeholder='Search' onClick={props.searchNotes}/>
+      <input onChange={(event)=>searchNotes(event.target.value)}type ="text" placeholder='Search' onClick={searchNotes}/>
     </div>
   )
 }

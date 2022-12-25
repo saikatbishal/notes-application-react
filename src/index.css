@@ -7,7 +7,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
-
+h1{
+	margin: 0.7em;
+}
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas,
 		'Courier New', monospace;
@@ -104,7 +106,7 @@ textarea:focus {
 	border-radius: 10px;
 	padding: 5px;
 	margin-bottom: 1.5em;
-	margin-top: 1.5em;
+	/* margin-top: 1.5em; */
 }
 
 .search input {
