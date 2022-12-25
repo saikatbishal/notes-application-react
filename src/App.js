@@ -1,18 +1,17 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import NotesList from './components/NotesList';
-// import { data } from './data.js'
 import {nanoid} from  'nanoid';
 import Search from './components/Search';
 import Header from './components/Header';
-import { MdBloodtype } from 'react-icons/md';
+// import { MdBloodtype } from 'react-icons/md';
 function App() {
   const [notes, setNotes] = useState(() => {
     const data = localStorage.getItem('react-notes-app-data');
     return data ? JSON.parse(data) : [];
   });
   const [searchText, setSearchText] = useState("");
-  
+  const body = document.querySelector('body');
   useEffect(() => {
     localStorage.setItem('react-notes-app-data',JSON.stringify(notes));
   }, [notes])
@@ -45,17 +44,13 @@ function App() {
 
 // TOGGGLING BETWEEN LIGHT  AND DARK MODE
   const changeMode = () => {
-    document.querySelector('body').classList.toggle('dark-mode');
-    if(MdBloodtype.classList.contains('dark-mode'))
-      localStorage.setItem('themeSwitch', 'dark');
-    else
-      localStorage.setItem('themeSwitch', 'light');
-
+    body.classList.toggle('dark-mode');
   }
 
   return (
     <div className="container">
-      <Header changeMode={changeMode}/>
+      {/* <MdBloodtype/> */}
+      <Header changeMode={changeMode} />
       <Search searchNotes = {setSearchText} />
       {<NotesList data={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
         handleAddNote={addNote}
