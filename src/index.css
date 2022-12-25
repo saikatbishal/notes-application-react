@@ -118,3 +118,13 @@ textarea:focus {
 .search input:focus {
 	outline: none;
 }
+svg path {
+  fill: transparent;
+  stroke: indigo;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: 0.2s;
+}
+h1:hover path {
+	d:path('M1,3 C1,6 6,6 6,3')
+}

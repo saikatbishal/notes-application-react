@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="container">
-      {/* <MdBloodtype/> */}
+      
       <Header changeMode={changeMode} />
       <Search searchNotes = {setSearchText} />
       {<NotesList data={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
