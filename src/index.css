@@ -92,11 +92,15 @@ textarea:focus {
 	justify-content: space-between;
 }
 
-.delete-icon {
+button.delete-icon {
 	cursor: pointer;
+	background-color: rgba(255,255,255,0);
+	border: none;
+	font-size: 25px;
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
 }
-.delete-icon:hover{
-	color: #a36;
+button.delete-icon:hover{
+	font-size: 27px;
 }
 
 .search {
