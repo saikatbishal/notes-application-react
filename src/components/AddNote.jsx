@@ -24,7 +24,7 @@ const AddNote = ({handleAddNote}) => {
     if(noteText.trim().length > 0) 
     {
       handleAddNote(noteText);
-      setNoteText('');
+      setNoteText(' ');
       setCharacter(200);
     }
     

@@ -10,7 +10,7 @@ function App() {
     const data = localStorage.getItem('react-notes-app-data');
     return data ? JSON.parse(data) : [];
   });
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState(" ");
   const body = document.querySelector('body');
   useEffect(() => {
     localStorage.setItem('react-notes-app-data',JSON.stringify(notes));
@@ -52,7 +52,7 @@ function App() {
       
       <Header changeMode={changeMode} />
       <Search searchNotes = {setSearchText} />
-      {<NotesList data={notes.filter((note)=>note.text.toLowerCase().includes(searchText.toLowerCase()))}
+      {<NotesList data={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
         handleAddNote={addNote}
         deleteNote={deleteNote}>
       </NotesList>}
